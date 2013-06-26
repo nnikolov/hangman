@@ -1,0 +1,23 @@
+<% @word.word.downcase.each_char do |char| %>
+<%= @chars.include?(char) ? char : '_' %>
+<% end %>
+
+<br /><br />
+<% alphabet = @alphabet == "latin" ? Array('A'..'Z') : Array('А'..'Ъ') + %w(ь Ю Я) %>
+<% alphabet.each do |l| %>
+<%= link_to l, my_guess_path(params[:id], l) %>&nbsp;
+<% end %>
+
+<br /><br />
+Hints: <%= session[:hints] %>,
+Score: 
+<% if @score > 0 %>
+-<%= @score %>
+<% else %>
+&nbsp<%= @score -%>
+<% end %>,
+Letters: <%= session[:chars].uniq %>
+<br /><br />
+<%= link_to 'Hint', hint_path %>
+<br /><%= link_to 'Play again', play_path %>
+<br /><%= link_to 'Back', words_path %>
