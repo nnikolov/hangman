@@ -1,14 +1,22 @@
+<div class="big">
+<div class="display">
+<% if @score < 7 %>
+<%= image_tag "hangman#{@score}.png", :id => "gallows_pole" %>
+<% else %>
+<%= image_tag "hangman6.png", :id => "gallows_pole" %>
+<% end %>
 <% @word.word.downcase.each_char do |char| %>
 <%= @chars.include?(char) ? char : '_' %>
 <% end %>
+</div>
 
-<br /><br />
 <% alphabet = @alphabet == "latin" ? Array('A'..'Z') : Array('А'..'Ъ') + %w(ь Ю Я) %>
 <% alphabet.each do |l| %>
-<%= link_to l, my_guess_path(params[:id], l) %>&nbsp;
+<%= link_to l, my_guess_path(params[:id], l), :class => "keyboard" %>&nbsp;
 <% end %>
+</div>
 
-<br /><br />
+<div class="status_bar">
 Hints: <%= session[:hints] %>,
 Score: 
 <% if @score > 0 %>
@@ -21,3 +29,4 @@ Letters: <%= session[:chars].uniq %>
 <%= link_to 'Hint', hint_path %>
 <br /><%= link_to 'Play again', play_path %>
 <br /><%= link_to 'Back', words_path %>
+</div>

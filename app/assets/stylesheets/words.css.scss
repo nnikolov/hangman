@@ -1,3 +1,42 @@
 // Place all the styles related to the Words controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.big{
+  font-size: 43px;
+  line-height: 75px;
+}
+.keyboard{
+  border-style:solid;
+  border-width:0px;
+  border-radius:5px;
+  box-shadow: 5px 5px 5px #888888;
+  text-decoration:none;
+  padding:5px 15px;
+  color:white;
+  background-color:black;
+}
+a.keyboard {
+  color: #fff;
+  &:visited {
+    color: #fff;
+  } 
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+} 
+.display{
+  border-style:solid;
+  border-width:3px;
+  color:blue;
+}
+.status_bar{
+  border-style:solid;
+  border-width:1px;
+  border-radius:5px;
+  padding:5px 15px;
+  box-shadow: 5px 5px 5px #888888;
+}
+#gallows_pole{
+  height:110px;
+}
