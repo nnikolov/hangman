@@ -41,6 +41,15 @@ a.keyboard {
   padding:5px 15px;
   box-shadow: 5px 5px 5px #000;
 }
+.guess{
+  background-image:url("/assets/baby.jpeg");
+  background-repeat:no-repeat;
+  background-size:100%;
+  background-position:center;
+}
 #gallows_pole{
-  height:110px;
+  width:110px;
+}
+#main{
+  background-color:white;
 }

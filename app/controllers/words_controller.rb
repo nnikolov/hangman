@@ -19,13 +19,18 @@ class WordsController < ApplicationController
 
   # Get /words/1/guess
   def guess
-    @word = Word.find(params[:id])
+    word = Word.find(params[:id])
+    if session[:level] == 'easy'
+      @word = word.word
+    else
+      @word = word.underscores(session[:chars])
+    end
     @chars = session[:chars]
-    @score = (session[:chars].uniq - @word.word.split("").uniq).size
-    @alphabet = Array('a'..'z').include?(@word.word[0].downcase) ? "latin" : "cyrillic"
+    @score = (session[:chars].uniq - word.word.split("").uniq).size
+    @alphabet = Array('a'..'z').include?(word.word[0].downcase) ? "latin" : "cyrillic"
 
     respond_to do |format|
-      format.html # guess.html.erb
+      format.html { render layout: "guess" } # guess.html.erb
     end
   end
 

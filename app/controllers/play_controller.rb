@@ -11,4 +11,14 @@ class PlayController < ApplicationController
       redirect_to words_path
     end
   end
+
+  def easy_play
+    session[:level] = 'easy'
+    redirect_to play_path
+  end
+
+  def regular_play
+    session[:level] = 'regular'
+    redirect_to play_path
+  end
 end

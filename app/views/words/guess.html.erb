@@ -1,12 +1,12 @@
 <div class="big">
 <div class="display">
 <% if @score < 7 %>
-<%= image_tag "hangman#{@score}.png", :id => "gallows_pole" %>
+<%= image_tag "hangman#{@score}.png", :id => "gallows_pole", :width => '110px' %>
 <% else %>
-<%= image_tag "hangman6.png", :id => "gallows_pole" %>
+<%= image_tag "hangman6.png", :id => "gallows_pole", :width => '110px'%>
 <% end %>
-<% @word.word.downcase.each_char do |char| %>
-<%= @chars.include?(char) ? char : '_' %>
+<% @word.downcase.each_char do |char| %>
+<%= raw @chars.include?(char) ? char : "<span style=\"color:red;\">#{char}</span>" %>
 <% end %>
 </div>
 

@@ -2,6 +2,15 @@ class Word < ActiveRecord::Base
   attr_accessible :word
   validates :word, :uniqueness => true
 
+  # Return the word with underscores in place of the letters not in chars
+  def underscores(chars)
+    tmp = []
+    self.word.each_char do |char|
+      tmp << (chars.include?(char) ? char : '_')
+    end
+    tmp.join
+  end
+
   # Return one random letter, so the word can be more easily guessed
   # Determine what letters remain to be guessed and return one of those letter
   # If all letters have already been guessed, just return a random letter`

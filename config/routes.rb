@@ -7,6 +7,10 @@ Hangman::Application.routes.draw do
 
   get "play/index", :as => :play
 
+  get "play/easy_play", :as => :easy_play
+
+  get "play/regular_play", :as => :regular_play
+
   resources :words
 
   # The priority is based upon order of creation:
