@@ -9,7 +9,7 @@
   border-style:solid;
   border-width:0px;
   border-radius:5px;
-  box-shadow: 5px 5px 5px #888888;
+  box-shadow: 5px 5px 5px #333;
   text-decoration:none;
   padding:5px 15px;
   color:white;
@@ -26,16 +26,20 @@ a.keyboard {
   }
 } 
 .display{
+  font-size: 73px;
+  line-height: 95px;
   border-style:solid;
   border-width:3px;
   color:blue;
+  background-color:rgba(255,255,0,0.7);
 }
 .status_bar{
+  background-color:rgba(255,255,255,0.5);
   border-style:solid;
   border-width:1px;
   border-radius:5px;
   padding:5px 15px;
-  box-shadow: 5px 5px 5px #888888;
+  box-shadow: 5px 5px 5px #000;
 }
 #gallows_pole{
   height:110px;
