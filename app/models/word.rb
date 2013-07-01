@@ -2,6 +2,12 @@ class Word < ActiveRecord::Base
   attr_accessible :word
   validates :word, :uniqueness => true
 
+  # Return a random word
+  def self.random_word(words)
+    word = Word.find(1 + rand(Word.all.size))
+    words.include?(word.id) ? self.random_word(words) : word
+  end
+
   # Return the word with underscores in place of the letters not in chars
   def underscores(chars)
     tmp = []

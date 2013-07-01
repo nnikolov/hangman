@@ -3,10 +3,15 @@ class PlayController < ApplicationController
   def index
     session[:chars] = []
     session[:hints] = 0
-    words = Word.find(:all)
+    words = Word.all
    
     if words.size > 0 
-      redirect_to guess_path(1 + rand(words.size))
+      if session[:seen_word_ids].nil? or session[:seen_word_ids].size >= words.size
+        session[:seen_word_ids] = [] 
+      end
+      word = Word.random_word(session[:seen_word_ids])
+      session[:seen_word_ids] << word.id
+      redirect_to guess_path(word.id)
     else
       redirect_to words_path
     end
