@@ -9,12 +9,13 @@ class Word < ActiveRecord::Base
   end
 
   # Return the word with underscores in place of the letters not in chars
-  def underscores(chars)
-    tmp = []
-    self.word.each_char do |char|
-      tmp << (chars.include?(char) ? char : '_')
+  def underscores(chars, level)
+    str = word.split("") - chars
+    nw = word.gsub(/[" "]/, '[]')
+    if level == 'easy' or str.size == 0
+      return nw
     end
-    tmp.join
+    nw.gsub(/["#{str}"]/, '_')
   end
 
   # Return one random letter, so the word can be more easily guessed
