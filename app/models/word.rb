@@ -10,11 +10,11 @@ class Word < ActiveRecord::Base
 
   # Return the word with underscores in place of the letters not in chars
   def underscores(chars, level)
+    # Find the characters that have not yet been guessed
     str = word.split("") - chars
     nw = word.gsub(/[" "]/, '[]')
-    if level == 'easy' or str.size == 0
-      return nw
-    end
+    return nw if level == 'easy' or str.size == 0
+    # Replace the characters that have not yet been guessed with underscores
     nw.gsub(/["#{str}"]/, '_')
   end
 
