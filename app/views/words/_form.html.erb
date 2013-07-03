@@ -1,7 +1,10 @@
 <%= form_for(@word) do |f| %>
   <% if @word.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
+      <h2><%= @word.errors.count %> 
+          <%= t("error", :count => @word.errors.count) %> 
+          <%= t("prohibited", :count => @word.errors.count) %> 
+          <%= t("this_word_from_being_saved") %>:</h2>
 
       <ul>
       <% @word.errors.full_messages.each do |msg| %>
@@ -12,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :word %><br />
+    <%= f.label t(:word) %><br />
     <%= f.text_field :word %>
   </div>
   <div class="actions">

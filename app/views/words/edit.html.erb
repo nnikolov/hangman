@@ -1,6 +1,6 @@
-<h1>Editing word</h1>
+<h1><%= t(:editing_word) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @word %> |
-<%= link_to 'Back', words_path %>
+<%= link_to t(:show), @word %> |
+<%= link_to t(:back), words_path %>

@@ -1,0 +1,47 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+bg:
+  hello: "Hello world"
+  hint: "Подскажи"
+  hints: "Подскази"
+  score: "Резултат"
+  letters: "Думи"
+  play_again: "Играй пак"
+  back: "Назад"
+  regular_play: "Нормална игра"
+  easy_play: "Лесна игра"
+  new_word: "Нова дума"
+  word: "Дума"
+  show: "Покажи"
+  edit: "Промени"
+  destroy: "Изтрий"
+  listing_words: "Всички думи"
+  editing_word: "Промяна на дума"
+  new_word: "Нова дума"
+  create_word: "Нова дума"
+  update_word: "Промени дума"
+  are_you_sure: "Сигурен ли сте?"
+  this_word_from_being_saved: "на тази дума да бъде запазена"
+  error: 
+    one: "проблем"
+    other: "проблема"
+  prohibited:
+    one: "попречи"
+    other: "попречиха"
+  helpers:
+    submit:
+      create: "Запази новата %{model}"
+      update: "Запази променената %{model}"
+  activerecord:
+    attributes:
+      word:
+        word: "Думата"
+    models:
+      word: "дума"
+    errors:
+      models:
+        word:
+          attributes:
+            word: 
+              taken: "вече я има"

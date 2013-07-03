@@ -17,16 +17,16 @@
 </div>
 
 <div class="status_bar">
-Hints: <%= session[:hints] %>,
-Score: 
+<%= t(:hints) %>: <%= session[:hints] %>,
+<%= t(:score) %>: 
 <% if @score > 0 %>
 -<%= @score %>
 <% else %>
 &nbsp<%= @score -%>
 <% end %>,
-Letters: <%= session[:chars].uniq %>
+<%= t(:letters) %>: <%= session[:chars].uniq %>
 <br /><br />
-<%= link_to 'Hint', hint_path %>
-<br /><%= link_to 'Play again', play_path %>
-<br /><%= link_to 'Back', words_path %>
+<%= link_to t(:hint), hint_path %>
+<br /><%= link_to t(:play_again), play_path %>
+<br /><%= link_to t(:back), words_path %>
 </div>

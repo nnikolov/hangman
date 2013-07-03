@@ -3,3 +3,31 @@
 
 en:
   hello: "Hello world"
+  hint: "Hint"
+  hints: "Hints"
+  score: "Score"
+  letters: "Letters"
+  play_again: "Play again"
+  back: "Back"
+  regular_play: "Regular play"
+  easy_play: "Easy play"
+  new_word: "New word"
+  word: "Word"
+  show: "Show"
+  edit: "Edit"
+  destroy: "Destroy"
+  listing_words: "Listing words"
+  editing_word: "Editing word"
+  new_word: "New word"
+  create_word: "Create word"
+  update_word: "Update word"
+  are_you_sure: "Are you sure?"
+  this_word_from_being_saved: "this word from being saved"
+  error:
+    one: "error"
+    other: "errors"
+  prohibited: "prohibited"
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
