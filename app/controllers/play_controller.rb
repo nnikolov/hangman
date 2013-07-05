@@ -6,9 +6,7 @@ class PlayController < ApplicationController
     words = Word.all
    
     if words.size > 0 
-      if session[:seen_word_ids].nil? or session[:seen_word_ids].size >= words.size
-        session[:seen_word_ids] = [] 
-      end
+      track_words(words.size)
       word = Word.random_word(session[:seen_word_ids])
       session[:seen_word_ids] << word.id
       redirect_to guess_path(word.id)

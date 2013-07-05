@@ -23,4 +23,10 @@ class ApplicationController < ActionController::Base
   #  parsed_locale = request.host.split('.').last
   #  I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale  : nil
   #end
+
+  def track_words(word_count)
+    if session[:seen_word_ids].nil? or session[:seen_word_ids].size >= word_count
+      session[:seen_word_ids] = []
+    end
+  end
 end
