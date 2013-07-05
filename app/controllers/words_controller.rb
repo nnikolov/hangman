@@ -22,8 +22,8 @@ class WordsController < ApplicationController
     word = Word.find(params[:id])
     @word = word.underscores(session[:chars], session[:level])
     @chars = session[:chars]
-    @score = (session[:chars].uniq - word.word.split("").uniq).size
-    @alphabet = Array('a'..'z').include?(word.word[0].downcase) ? "latin" : "cyrillic"
+    @score = score(word)
+    @alphabet = alphabet_detect(word)
 
     respond_to do |format|
       format.html { render layout: "guess" } # guess.html.erb
@@ -110,5 +110,15 @@ class WordsController < ApplicationController
       format.html { redirect_to words_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def score(word)
+    (session[:chars].uniq - word.word.split("").uniq).size
+  end
+
+  def alphabet_detect(word)
+    Array('a'..'z').include?(word.word[0].downcase) ? "latin" : "cyrillic"
   end
 end
